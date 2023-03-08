@@ -53,6 +53,10 @@ input:focus, input:-internal-autofill-selected {
     background-color: transparent;
 }
 
+label {
+    display: none;
+}
+
 .boxStyle {
     border-radius: 15px;
     background-color: var(--content-bg);
