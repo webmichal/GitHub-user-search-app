@@ -103,3 +103,14 @@ themeSwitch.addEventListener("click", (ev) => {
     document.querySelector("body").classList.toggle("darkTheme");
     ev.target.innerHTML == "dark"? ev.target.innerHTML = "light" : ev.target.innerHTML = "dark"; 
 });
+
+//load default data --- to remove
+(function () {
+    fetch("https://api.github.com/users/octocat")
+    .then(res => res.json())
+    .then(data => generateUserDetail(data))
+    .catch(err => console.log(err));
+
+    document.querySelector("body").classList.toggle("darkTheme");
+    themeSwitch.innerHTML = "light";
+})();
