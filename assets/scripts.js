@@ -9,7 +9,7 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
 let userName = "";
 
 function createHtml(tagName, elAttr, tagContent) {
-    if(tagName == "p" && tagContent == undefined && elAttr.alternativeText == undefined) {
+    if(tagName == "p" && tagContent == undefined && elAttr.title == undefined) {
         return "";
     }
 
@@ -23,8 +23,8 @@ function createHtml(tagName, elAttr, tagContent) {
         tagContent instanceof Element? documentEl.append(tagContent) : documentEl.innerHTML = tagContent;
     } 
     
-    if(elAttr.alternativeText && tagContent == null) {
-        documentEl.innerHTML = elAttr.alternativeText;
+    if(elAttr.title && tagContent == null) {
+        documentEl.innerHTML = elAttr.title;
         documentEl.classList.add("opacity50");
     }
 
@@ -69,7 +69,7 @@ function generateUserDetail(user) {
                                 [user.public_repos, user.followers, user.following]]);
     let address = createHtml("p", {class : "address"}, user.location);
     let userUrl = createHtml("a", {class : "blogUrl", href : user.blog}, user.blog);
-    let twitter = createHtml("p", {class : "twitter", alternativeText : "Not Available"}, user.twitter_username);
+    let twitter = createHtml("p", {class : "twitter", title : "Not Available"}, user.twitter_username);
     let userCompany = createHtml("p", {class : "company"}, user.company);
 
     let userData = createHtml("div", {class : "userData"});
