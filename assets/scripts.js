@@ -59,7 +59,7 @@ function generateUserDetail(user) {
     }
 
     let joinDate = new Date(user.created_at);
-    let avatarImg = createHtml("img", {src : user.avatar_url});
+    let avatarImg = createHtml("img", {src : user.avatar_url, alt : user.name});
     let avatar = createHtml("div", {class : "avatar"}, avatarImg);
     let userFullName = createHtml("h1", {}, user.name);
     let createdAt = createHtml("p", {}, "Joined " + joinDate.getDay() + " " + months[joinDate.getMonth()] + " " + joinDate.getFullYear());
