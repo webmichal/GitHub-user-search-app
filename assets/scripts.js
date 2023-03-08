@@ -4,7 +4,7 @@ const userDetail = document.getElementById("userDetail");
 const themeSwitch = document.querySelector(".themeMode");
 const noResult = document.querySelector(".error");
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
-'Aug', 'Sep', 'Oct', 'Dec', 'Nov'];
+    'Aug', 'Sep', 'Oct', 'Dec', 'Nov'];
 
 let userName = "";
 
